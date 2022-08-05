@@ -1,1 +1,1 @@
-web: gunicorn pearljam_fansite.wsgi
+web: gunicorn ProjectFour.wsgi
