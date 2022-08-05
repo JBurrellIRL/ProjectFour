@@ -1,0 +1,1 @@
+web: gunicorn pearljam_fansite.wsgi
