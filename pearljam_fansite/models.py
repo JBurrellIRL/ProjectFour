@@ -12,6 +12,7 @@ class AlbumReview(models.Model):
 
     title = models.CharField(max_length=100)
     review = models.TextField()
+    slug = models.SlugField(max_length=50, unique=True)
     excerpt = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now_add=True)
