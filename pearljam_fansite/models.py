@@ -11,15 +11,15 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class AlbumReview(models.Model):
 
     title = models.CharField(max_length=100)
-    review = models.TextField()
     slug = models.SlugField(max_length=50, unique=True)
+    review = models.TextField()
     excerpt = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    last_modified = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    featured_image = CloudinaryField('image', default='placeholder')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="album_reviews"
     )
-    featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
@@ -31,7 +31,7 @@ class AlbumReview(models.Model):
 
 # Commenting model 
 
-class Comments(models.Model):
+class Comment(models.Model):
     post = models.ForeignKey(AlbumReview, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=100)
