@@ -8,7 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 # Album review model
-class AlbumReview(models.Model):
+class Post(models.Model):
 
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=50, unique=True)
@@ -29,10 +29,10 @@ class AlbumReview(models.Model):
         return self.title
 
 
-# Commenting model 
+# Commenting model
 
 class Comment(models.Model):
-    post = models.ForeignKey(AlbumReview, on_delete=models.CASCADE,
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=100)
     email = models.EmailField()
