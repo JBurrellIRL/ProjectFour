@@ -8,6 +8,10 @@ body {
 
 }
 
+p {
+    font-size: 20px;
+}
+
 .navbar-toggler {
     border: 0px;
 }
@@ -129,4 +133,8 @@ I feel it adds another layer to the page and draws the user in*/
 
 .review-detail {
     text-align: center;
+}
+
+.login-screen {
+    padding-bottom: 50px;
 }
