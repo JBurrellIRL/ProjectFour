@@ -1,6 +1,11 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.urls import reverse_lazy
 from django.views import generic, View
-from .models import Post
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
+from .models import Post, Comment
 from .forms import CommentForm
 
 
@@ -20,29 +25,36 @@ class Reviews(generic.ListView):
 
 
 class PostDetail(generic.DetailView):
+    """
+    Used to display all reviews in the album reviews page, including comments
+    left by logged-in users
+    """
     model = Post
     template_name = 'review_detail.html'
 
-    def get(self, request, slug,):
+    def get(self, request, slug):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_date")
+        comments = post.comments.order_by("-created_date")
 
         return render(
             request,
             "review_detail.html",
             {
                 "post": post,
-                "comments": comments,
-                "commented": False,
+                "comments": comments,          
                 "comment_form": CommentForm()
             },
         )
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug):
+        """
+        This is used when a POST request is made to the view
+        via the comment box.
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_date")
+        comments = post.comments.order_by("-created_date")
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -51,8 +63,8 @@ class PostDetail(generic.DetailView):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            response = redirect('/album-reviews')
-            return response
+            messages.success(self.request, 'Your commment has been added.')
+        
         else:
             comment_form = CommentForm()
 
@@ -62,7 +74,40 @@ class PostDetail(generic.DetailView):
             {
                 "post": post,
                 "comments": comments,
-                "commented": True,
                 "comment_form": CommentForm()
             },
         )
+
+
+class UpdateComment(
+        LoginRequiredMixin, UserPassesTestMixin,
+        SuccessMessageMixin, generic.UpdateView):
+
+    """
+    This view is used to allow logged in users to edit their own comments
+    """
+    model = Comment
+    form_class = CommentForm
+    template_name = 'update_comment.html'
+    success_message = "Comment updated!"
+
+    def form_valid(self, form):
+        form.instance.name = self.request.user.username
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return HttpResponseRedirect(self.get_success_url())
+
+    def test_func(self):
+        """
+        Prevent another user from editing user's comments
+        """
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+    def get_success_url(self):
+        """ Return to recipe detail view when comment updated sucessfully"""
+        # review = self.object.review_detail
+        return reverse_lazy('review_detail', kwargs={'slug'})
+
+

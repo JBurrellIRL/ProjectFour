@@ -118,11 +118,10 @@ h2 {
     padding: 10px;
 }
 
-/* To add some animation and 'live' elements to my page I added this feature.
-I feel it adds another layer to the page and draws the user in*/
+
 
 .tour-dates:hover {
-    background-color: #dc3545;
+    background-color: #212529;
     transition-duration: 1s;
     color: white;
 }
@@ -137,4 +136,8 @@ I feel it adds another layer to the page and draws the user in*/
 
 .login-screen {
     padding-bottom: 50px;
+}
+
+.image-container {
+    position: relative
 }

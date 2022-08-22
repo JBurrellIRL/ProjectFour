@@ -35,6 +35,12 @@
                 {% for comment in comments %}
                 <hr>
                 <strong>{{ comment.name }} - {{ comment.created_date }}</strong>
+                {% if user.is_authenticated and user.username == comment.name %}
+                <span class="comment-action-btn pl-2">
+                    <a href="{% url 'update_comment' comment.id %}" aria-label="edit-comment"><i
+                            class="fas fa-edit link-primary"></i></a>
+                </span>
+                {% endif %}
 
                 {{ comment.body | linebreaks }}
 
@@ -65,8 +71,9 @@
                 </form>
                 {% endif %}
                 {% if not user.is_authenticated %}
-                <p><a class="link" href="{% url 'account_login' %}"> <strong>Log In</strong></a> or <a class="link"
-                        href="{% url 'account_signup' %}"> <strong>Register</strong></a> to leave a comment! </p>
+                <p><a class="link" href="{% url 'account_login' %}?next={{request.path}}"> <strong>Log In</strong></a>
+                    or <a class="link" href="{% url 'account_signup' %}?next={{request.path}}">
+                        <strong>Register</strong></a> to leave a comment! </p>
                 {% endif %}
                 {% endif %}
             </div>
