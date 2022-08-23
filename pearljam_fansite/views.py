@@ -111,3 +111,34 @@ class UpdateComment(
         return reverse_lazy('review_detail', kwargs={'slug': review.slug})
 
 
+class DeleteComment(
+        LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+
+    """
+    This is used to allow users to delete only their own comments
+    """
+    model = Comment
+    template_name = 'delete_comment.html'
+    success_message = "Comment deleted successfully."
+
+    def test_func(self):
+        """
+        Prevent another user from deleting user's comments
+        """
+        comment = self.get_object()
+        return comment.name == self.request.user.username
+
+    def delete(self, request, *args, **kwargs):
+        """
+        Adding this to get around Django issue where success messages do not
+        work with DeleteView: https://code.djangoproject.com/ticket/21926
+        Suggested fix found here: 
+        https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
+        """
+        messages.success(self.request, self.success_message)
+        return super(DeleteComment, self).delete(request, *args, **kwargs)
+
+    def get_success_url(self):
+        """ Return to review page when comment has been deleted by user"""
+        review = self.object.post
+        return reverse_lazy('review_detail', kwargs={'slug': review.slug})

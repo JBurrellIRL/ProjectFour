@@ -2,18 +2,18 @@
 {% load crispy_forms_tags %}
 
 <div class="container">
-    <h1 class="page-title">Edit Comment</h1>
-    <hr class="home-break">
+    <h1 class="page-title">Delete Comment</h1>
+    <hr>
     <br>
+    <p class="text-center mt-3">Are you sure you want to delete this comment? This cannot be undone.</p>
     <div class="row justify-content-center">
         {% if user.is_authenticated and comment.name == user.username %}
-        <!-- Ensure the user is signed in, and the comment they're trying to access is owned by them -->
         <div class="col-11 col-md-6 col-lg-4 mt-3">
             <form method="post">
                 {{ form | crispy }}
                 {% csrf_token %}
                 <div class="text-center">
-                    <button type="submit" class="btn btn-dark btn-lg update-delete-button">Update</button>
+                    <button type="submit" class="btn btn-dark btn-lg update-delete-button">Delete</button>
                 </div>
             </form>
         </div>

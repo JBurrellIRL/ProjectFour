@@ -2,6 +2,7 @@
 
 html,
 body {
+    position: relative;
     height: 100%;
     width: 100%;
     font-family: 'Oswald', sans-serif;
@@ -29,6 +30,17 @@ p {
 .container-fluid {
     width: 100%;
     overflow-y: hidden;
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 300px;
+    /* height: 1000px; */
+    width: 100%;
+    background-image: url('https://www.pearljamonline.it/pj-wp/wp-content/uploads/2020/10/Pearl-Jam-Danny-Clinch-2020-Universal-Island-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -136,4 +148,31 @@ h2 {
 
 .login-screen {
     padding-bottom: 50px;
+}
+
+.page-title {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.update-delete-button {
+    margin: 30px;
+}
+
+/* Form  */
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 3px;
+    text-align: center;
+}
+
+.help-block.with-errors {
+    color: #ff5050;
+    margin-top: 5px;
+
 }

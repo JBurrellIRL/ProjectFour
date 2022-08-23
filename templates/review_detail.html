@@ -37,8 +37,12 @@
                 <strong>{{ comment.name }} - {{ comment.created_date }}</strong>
                 {% if user.is_authenticated and user.username == comment.name %}
                 <span class="comment-action-btn pl-2">
-                    <a href="{% url 'update_comment' comment.id %}" aria-label="edit-comment"><i
-                            class="fas fa-edit link-primary"></i></a>
+                    <a href="{% url 'update_comment' comment.id %}" aria-label="edit-comment">Edit</a>
+                </span>
+                {% endif %}
+                {% if user.is_authenticated and user.username == comment.name %}
+                <span class="comment-action-btn pl-2">
+                    <a href="{% url 'delete_comment' comment.id %}" aria-label="edit-comment">Delete</a>
                 </span>
                 {% endif %}
 
