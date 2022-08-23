@@ -2,22 +2,22 @@
 
 {% block content %}
 
-<header class="masthead img-responsive background-image bg-image">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12 text-center">
-                <h1 class="fw-light">Vertically Centered Masthead Content</h1>
-                <p class="lead">A great starter layout for a landing page</p>
-            </div>
-        </div>
+<div id="home" class="container-fluid bg-dark text-white">
+
+    <!-- <div class="row"> -->
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <img class="d-block w-100"
+            src="https://www.pearljamonline.it/pj-wp/wp-content/uploads/2020/10/Pearl-Jam-Danny-Clinch-2020-Universal-Island-3.jpg"
+            alt="Banner Image">
     </div>
-</header>
+    <!-- </div> -->
+
+</div>
 
 <div id="about" class="container-fluid bg-dark text-white">
-    <!------ I have left line breaks between code to make my code easier to see ----->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-sm-12">
                 <h2>About Pearl Jam</h2>
             </div>
         </div>
@@ -124,96 +124,61 @@
     </div>
 </div>
 
-<div class="container container-fluid ">
+<div id="contact-form" class="container-fluid bg-dark">
 
-    <a name="container"></a>
-
-    <div class=" text-center mt-5 ">
-
-        <h1>Contact Us! </h1>
-
-
-    </div>
+    <a name="anchor"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Contact us here!</h2>
 
 
-    <div class="row ">
+                <div class="container py-4">
 
-        <div class="card mt-2 mx-auto p-4 bg-light">
-            <div class="card-body bg-light">
+                    <!-- Bootstrap 5 starter form -->
+                    <form id="contactForm">
 
-                <div class="container">
-                    <form id="contact-form" role="form">
-
-
-
-                        <div class="controls">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_name">Firstname *</label>
-                                        <input id="form_name" type="text" name="name" class="form-control"
-                                            placeholder="Please enter your firstname *" required="required"
-                                            data-error="Firstname is required.">
-
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_lastname">Lastname *</label>
-                                        <input id="form_lastname" type="text" name="surname" class="form-control"
-                                            placeholder="Please enter your lastname *" required="required"
-                                            data-error="Lastname is required.">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Email *</label>
-                                        <input id="form_email" type="email" name="email" class="form-control"
-                                            placeholder="Please enter your email *" required="required"
-                                            data-error="Valid email is required.">
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="form_message">Message *</label>
-                                        <textarea id="form_message" name="message" class="form-control"
-                                            placeholder="Write your message here." rows="4" required="required"
-                                            data-error="Please, leave us a message."></textarea>
-                                    </div>
-
-                                </div>
-
-
-                                <div class="col-md-12">
-
-                                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
-                            " value="Send Message">
-
-                                </div>
-
-                            </div>
-
-
+                        <!-- Name input -->
+                        <div class="mb-3">
+                            <p>
+                                <label class="form-label text-white" for="name">Name</label>
+                            </p>
+                            <input class="form-control" id="name" type="text" placeholder="Name" />
                         </div>
+
+                        <!-- Email address input -->
+                        <div class="mb-3">
+                            <p>
+                                <label class="form-label text-white" for="emailAddress">Email Address</label>
+                            </p>
+                            <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
+                        </div>
+
+                        <!-- Message input -->
+                        <div class="mb-3">
+                            <p>
+                                <label class="form-label text-white" for="message">Message</label>
+                            </p>
+
+                            <textarea class="form-control" id="message" type="text" placeholder="Message"
+                                style="height: 10rem;"></textarea>
+                        </div>
+
+                        <!-- Form submit button -->
+                        <div class="d-grid">
+                            <button class="btn btn-light btn-lg" type="submit">Submit</button>
+                        </div>
+
                     </form>
                 </div>
             </div>
 
-
         </div>
-        <!-- /.8 -->
+
+
+
 
     </div>
-    <!-- /.row-->
-
-</div>
 
 </div>
 

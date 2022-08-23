@@ -32,16 +32,16 @@ p {
     overflow-y: hidden;
 }
 
-.masthead {
+/* .masthead {
     height: 100vh;
     min-height: 300px;
-    /* height: 1000px; */
+
     width: 100%;
     background-image: url('https://www.pearljamonline.it/pj-wp/wp-content/uploads/2020/10/Pearl-Jam-Danny-Clinch-2020-Universal-Island-3.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+} */
 
 
 .container {
@@ -58,6 +58,11 @@ p {
 }
 
 /* About  */
+
+#about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 .box-about {
     text-align: center;
@@ -79,7 +84,7 @@ h3 {
     font-weight: 500;
     color: black;
     text-align: center;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     padding-bottom: 50px;
     margin-left: 20px;
     margin-right: 20px;
@@ -100,13 +105,18 @@ h2 {
     font-family: "Oswald", sans-serif;
     font-weight: 500;
     color: white;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    /* padding-top: 30px; */
+    padding-bottom: 50px;
     margin-left: 15px;
     margin-right: 15px;
 }
 
 /* Tour dates  */
+
+#news {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 .tour-info {
     font-family: "Oswald", sans-serif;
@@ -114,7 +124,7 @@ h2 {
     font-size: 1.3rem;
     margin-left: 20px;
     margin-right: 20px;
-    text-align: justify;
+    text-align: center;
     padding-bottom: 10px;
 }
 
@@ -160,6 +170,15 @@ h2 {
 }
 
 /* Form  */
+
+#contact-form {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.py-4 {
+    padding: 0px !important;
+}
 
 .btn-send {
     font-weight: 300;
