@@ -106,8 +106,8 @@ class UpdateComment(
         return comment.name == self.request.user.username
 
     def get_success_url(self):
-        """ Return to recipe detail view when comment updated sucessfully"""
-        # review = self.object.review_detail
-        return reverse_lazy('review_detail', kwargs={'slug'})
+        """ Return to review detail view when comment has been updated by the user"""
+        review = self.object.post
+        return reverse_lazy('review_detail', kwargs={'slug': review.slug})
 
 

@@ -122,7 +122,7 @@ h2 {
 
 .tour-dates:hover {
     background-color: #212529;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     color: white;
 }
 
@@ -136,8 +136,4 @@ h2 {
 
 .login-screen {
     padding-bottom: 50px;
-}
-
-.image-container {
-    position: relative
 }
