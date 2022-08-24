@@ -32,16 +32,9 @@ p {
     overflow-y: hidden;
 }
 
-/* .masthead {
-    height: 100vh;
-    min-height: 300px;
-
-    width: 100%;
-    background-image: url('https://www.pearljamonline.it/pj-wp/wp-content/uploads/2020/10/Pearl-Jam-Danny-Clinch-2020-Universal-Island-3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
+.masthead {
+    margin-top: 10px;
+}
 
 
 .container {
@@ -86,6 +79,7 @@ h3 {
     text-align: center;
     /* padding-top: 50px; */
     padding-bottom: 50px;
+    padding-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -152,8 +146,28 @@ h2 {
     text-decoration: none;
 }
 
+h5 {
+    text-align: center;
+}
+
+h2.card-title {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post-title {
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+p.post-subtitle {
+    margin-bottom: 3px;
+}
+
 .review-detail {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .login-screen {

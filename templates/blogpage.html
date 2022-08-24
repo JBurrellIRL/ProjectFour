@@ -22,6 +22,7 @@
                         <a href="{% url 'review_detail' post.slug  %}" class="post-link">
                             <h2 class="card-title text-dark">{{ post.title }}</h2>
                         </a>
+                        <h5 class="card-title text-dark">Release date: {{ post.album_release_date }}</h5>
                         <hr />
                         <p class="card-text">{{ post.excerpt }}</p>
 

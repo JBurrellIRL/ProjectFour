@@ -1,29 +1,40 @@
 {% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="row">
-        <div class="col card mb-4  mt-3 left top">
-            <div class="card-body">
-                <div class="d-none d-md-block col-md-6 masthead-image">
-                    <!-- The featured image URL goes in the src attribute -->
-                    {% if "placeholder" in post.featured_image.url %}
-                    <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-                    {% else %}
-                    <img src=" {{ post.featured_image.url }}" width="100%">
-                    {% endif %}
-                </div>
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    <h2 class="text-dark">Ten (1991)</h2>
-                    {{ post.review | safe }}
-                </p>
+<div class="masthead">
+    <div class="container review-detail">
+        <div class="row g-0">
 
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                {% else %}
+                <img src=" {{ post.featured_image.url }}" width="100%">
+                {% endif %}
             </div>
+
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle">Album Released On: {{ post.album_release_date }}</p>
+                <p class="post-subtitle">Produced By: {{ post.album_producer }}</p>
+            </div>
+
         </div>
     </div>
+</div>
 
+<div class="container">
+
+    <p class="card-text ">
+        <hr>
+        <h2 class="text-dark">{{ post.title }}</h2>
+        {{ post.review | safe }}
+    </p>
+</div>
+<div class="container">
     <div class="row">
 
         <div class="col-md-12 card mb-4  mt-3 ">
@@ -36,13 +47,13 @@
                 <hr>
                 <strong>{{ comment.name }} - {{ comment.created_date }}</strong>
                 {% if user.is_authenticated and user.username == comment.name %}
-                <span class="comment-action-btn pl-2">
+                <span class="comment-action-text pl-2">
                     <a href="{% url 'update_comment' comment.id %}" aria-label="edit-comment">Edit</a>
                 </span>
                 {% endif %}
                 {% if user.is_authenticated and user.username == comment.name %}
-                <span class="comment-action-btn pl-2">
-                    <a href="{% url 'delete_comment' comment.id %}" aria-label="edit-comment">Delete</a>
+                <span class="comment-action-text pl-2">
+                    <a href="{% url 'delete_comment' comment.id %}" aria-label="delete-comment">Delete</a>
                 </span>
                 {% endif %}
 
@@ -84,5 +95,6 @@
         </div>
 
     </div>
+</div>
 
-    {% endblock content %}
+{% endblock content %}

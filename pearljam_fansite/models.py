@@ -16,6 +16,8 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+    album_release_date = models.TextField(blank=True)
+    album_producer = models.TextField(blank=True)
     featured_image = CloudinaryField('image', default='placeholder')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="album_reviews"
