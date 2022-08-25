@@ -57,6 +57,7 @@ class PostDetail(generic.DetailView):
         comments = post.comments.order_by("-created_date")
 
         comment_form = CommentForm(data=request.POST)
+
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -118,15 +119,16 @@ class DeleteComment(
         LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
 
     """
-    This is used to allow users to delete only their own comments
+    This view is used to allow users to delete only their own comments,
+    and not those of other users.
     """
     model = Comment
     template_name = 'delete_comment.html'
-    success_message = "Comment deleted successfully."
+    success_message = "Comment deleted."
 
     def test_func(self):
         """
-        Prevent another user from deleting user's comments
+        To prevent another user from deleting the comments left by others
         """
         comment = self.get_object()
         return comment.name == self.request.user.username
