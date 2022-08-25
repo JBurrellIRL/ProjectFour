@@ -20,7 +20,7 @@ class Reviews(generic.ListView):
     """
     model = Post
     template_name = "blogpage.html"
-    queryset = Post.objects.filter(status=1).order_by('-created_date')
+    queryset = Post.objects.filter(status=1).order_by('created_date')
     paginate_by = 9
 
 
