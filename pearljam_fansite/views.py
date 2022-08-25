@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import generic, View
-from django.http import HttpResponse, HttpResponseRedirect
+from django.views import generic
+from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
@@ -42,7 +42,7 @@ class PostDetail(generic.DetailView):
             "review_detail.html",
             {
                 "post": post,
-                "comments": comments,          
+                "comments": comments,
                 "comment_form": CommentForm()
             },
         )
@@ -64,7 +64,7 @@ class PostDetail(generic.DetailView):
             comment.post = post
             comment.save()
             messages.success(self.request, 'Your commment has been added.')
-        
+
         else:
             comment_form = CommentForm()
 
@@ -106,7 +106,10 @@ class UpdateComment(
         return comment.name == self.request.user.username
 
     def get_success_url(self):
-        """ Return to review detail view when comment has been updated by the user"""
+        """
+        Return to review detail view when comment has
+        been updated by the user
+        """
         review = self.object.post
         return reverse_lazy('review_detail', kwargs={'slug': review.slug})
 
@@ -132,7 +135,7 @@ class DeleteComment(
         """
         Adding this to get around Django issue where success messages do not
         work with DeleteView: https://code.djangoproject.com/ticket/21926
-        Suggested fix found here: 
+        Suggested fix found here:
         https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
         """
         messages.success(self.request, self.success_message)
