@@ -14,9 +14,10 @@
                         <div class="image-container">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="card-img-top"
-                                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                                alt="backup album thumbnail image">
                             {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="album thumbnail image">
                             {% endif %}
                         </div>
                         <a href="{% url 'review_detail' post.slug  %}" class="post-link">
