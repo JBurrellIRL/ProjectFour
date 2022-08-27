@@ -5,7 +5,7 @@
     <div class="container review-detail">
         <div class="row g-0">
 
-            <div class="d-sm-block col-md-6 masthead-image">
+            <div class="d-sm-block col-lg-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -14,7 +14,7 @@
                 {% endif %}
             </div>
 
-            <div class="col-md-6 masthead-text">
+            <div class="col-lg-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
@@ -30,7 +30,7 @@
 
     <p class="card-text ">
         <hr>
-        <h2 class="text-dark">{{ post.title }}</h2>
+        <!-- <h2 class="text-dark">{{ post.title }}</h2> -->
         {{ post.review | safe }}
     </p>
 </div>
