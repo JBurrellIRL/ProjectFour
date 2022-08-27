@@ -5,6 +5,7 @@ urlpatterns = [
     # path("", views.Reviews.as_view(), name='home'),
     path("", views.Home.as_view(), name='home'),
     path("album-reviews/", views.Reviews.as_view(), name='album_reviews'),
+    path("contact.html", views.contact, name='contact'),
     path(
         'reviews/<slug:slug>/',
         views.PostDetail.as_view(), name='review_detail'
@@ -17,5 +18,6 @@ urlpatterns = [
         'comments/<int:pk>/delete/',
         views.DeleteComment.as_view(), name='delete_comment'
         ),
+    
 
 ]

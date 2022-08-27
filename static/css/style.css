@@ -201,6 +201,16 @@ p.post-subtitle {
     padding-bottom: 50px;
 }
 
+h3.form-submission-text {
+    text-align: center;
+    color: white;
+}
+
+p.form-submission-text {
+    text-align: center;
+    color: white;
+}
+
 .py-4 {
     padding: 0px !important;
 }

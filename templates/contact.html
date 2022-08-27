@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="contact-form" class="container-fluid bg-dark">
+
+    <div class="container">
+
+        <div class="row">
+            {% if message_name %}
+            <h3 class="form-submission-text">Thanks for your submission, {{ message_name }}!</h3>
+            <p class="form-submission-text">We read all your messages but are unable to respond personally. Have a great
+                day!</p>
+            {% else %}
+            <div class="col-sm-12">
+                <h2>Contact us here!</h2>
+                <div class="container py-4">
+                    <form id="contactForm" method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <p><label class="form-label text-white" for="name">Name</label></p>
+                            <input class="form-control" name="message-name" id="name" type="text" placeholder="Name" />
+                        </div>
+                        <div class="mb-3">
+                            <p><label class="form-label text-white" for="emailAddress">Email Address</label></p>
+                            <input class="form-control" id="emailAddress" name="message-email" type="email"
+                                placeholder="Email Address" />
+                        </div>
+                        <div class="mb-3">
+                            <p><label class="form-label text-white" for="message">Message</label></p>
+                            <textarea class="form-control" name="message" id="message-box" type="text"
+                                placeholder="Message" style="height: 10rem;"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-light btn-lg" type="submit">Submit</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
