@@ -19,17 +19,18 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="name">Name</label></p>
-                            <input class="form-control" name="message-name" id="name" type="text" placeholder="Name" />
+                            <input class="form-control" name="message-name" id="name" type="text" required
+                                placeholder="Name" />
                         </div>
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="emailAddress">Email Address</label></p>
-                            <input class="form-control" id="emailAddress" name="message-email" type="email"
+                            <input class="form-control" id="emailAddress" required name="message-email" type="email"
                                 placeholder="Email Address" />
                         </div>
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="message">Message</label></p>
-                            <textarea class="form-control" name="message" id="message-box" type="text"
-                                placeholder="Message" style="height: 10rem;"></textarea>
+                            <textarea class="form-control" name="message-contents" id="message-box" type="text"
+                                placeholder="Message" required></textarea>
                         </div>
                         <div class="d-grid">
                             <button class="btn btn-light btn-lg" type="submit">Submit</button>

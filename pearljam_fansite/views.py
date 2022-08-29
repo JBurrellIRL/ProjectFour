@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
+from django.core.mail import send_mail
 from .models import Post, Comment
 from .forms import CommentForm
 
@@ -155,7 +156,16 @@ def contact(request):
     if request.method == "POST":
         message_name = request.POST['message-name']
         message_email = request.POST['message-email']
-        message = request.POST['message']
+        message_contents = request.POST['message-contents']
+        send_mail(
+            message_name,
+            message_email,
+            message_contents,
+            ['jonathanburrell@outlook.com'],
+
+        )
+
+
         return render(request, 'contact.html', {'message_name': message_name})
 
     else:

@@ -18,6 +18,4 @@ urlpatterns = [
         'comments/<int:pk>/delete/',
         views.DeleteComment.as_view(), name='delete_comment'
         ),
-    
-
 ]

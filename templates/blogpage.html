@@ -12,13 +12,16 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="image-container">
-                            {% if "placeholder" in post.featured_image.url %}
-                            <img class="card-img-top"
-                                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                                alt="backup album thumbnail image">
-                            {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="album thumbnail image">
-                            {% endif %}
+                            <a href="{% url 'review_detail' post.slug  %}">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://cdn.smehost.net/legacyrecordingscouk-ukprod/wp-content/uploads/2021/08/Pearl_Jam.03.SonyBMG-1-1-600x600.jpg"
+                                    alt="backup album thumbnail image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                    alt="album thumbnail image">
+                                {% endif %}
+                            </a>
                         </div>
                         <a href="{% url 'review_detail' post.slug  %}" class="post-link">
                             <h2 class="card-title text-dark">{{ post.title }}</h2>

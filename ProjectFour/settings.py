@@ -22,7 +22,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["pearljam-fansite.herokuapp.com", "localhost"]
 
@@ -158,3 +158,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email settings 
+
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'jonathanburrell@outlook.com'
+EMAIL_HOST_PASSWORD = 'OUTLOOK_PASSWORD'
+EMAIL_USE_TLS = True
