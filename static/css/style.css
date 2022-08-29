@@ -17,9 +17,9 @@ p {
     border: 0px;
 }
 
-.nav-link {
+nav .navbar-nav li a {
+    color: #212529 !important;
     font-size: 20px;
-    color: #212529;
 }
 
 .footer-text {
@@ -194,6 +194,14 @@ p.post-subtitle {
     margin: 30px;
 }
 
+a.subscribe-button {
+    text-align: center;
+}
+
+#videos {
+    padding: 50px 12px;
+}
+
 /* Form  */
 
 #contact-form {
@@ -229,6 +237,25 @@ p.form-submission-text {
     color: #ff5050;
     margin-top: 5px;
 
+}
+
+/* Music videos section  */
+
+h3.music-videos {
+    color: white;
+
+}
+
+p.subscribe {
+    text-align: center;
+}
+
+.embed-responsive-16by9 {
+    width: auto;
+    height: auto;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /* Media Queries  */

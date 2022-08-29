@@ -50,7 +50,7 @@ class PostDetail(generic.DetailView):
     def post(self, request, slug):
         """
         This is used when a POST request is made to the view
-        via the comment box.
+        via the comment box, when submitting a comment.
         """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
