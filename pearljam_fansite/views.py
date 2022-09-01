@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy, reverse
 from django.views import generic
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
@@ -80,6 +80,8 @@ class PostDetail(generic.DetailView):
             },
         )
 
+# redirect with paramaters - django docs - reverse or reverse lazy ^^
+
 
 class UpdateComment(
         LoginRequiredMixin, UserPassesTestMixin,
@@ -150,6 +152,7 @@ class DeleteComment(
         return reverse_lazy('review_detail', kwargs={'slug': review.slug})
 
 
+# Contact Form View 
 
 def contact(request):
 
@@ -164,8 +167,7 @@ def contact(request):
             ['jonathanburrell@outlook.com'],
 
         )
-
-
+        messages.success(request, 'Your message has been received. Thanks!')
         return render(request, 'contact.html', {'message_name': message_name})
 
     else:
