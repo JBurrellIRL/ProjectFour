@@ -6,6 +6,7 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
 
 }
 
@@ -16,6 +17,10 @@ body {
 nav .navbar-nav li a {
     color: #212529 !important;
     font-size: 1.3rem;
+}
+
+div.footer-text {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .footer-text {
@@ -54,6 +59,7 @@ h5 {
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
+    margin: 0px;
 }
 
 .container-fluid {
@@ -123,12 +129,20 @@ p {
     padding: 10px;
 }
 
-
-
 .tour-dates:hover {
     background-color: #212529;
     transition-duration: 0.5s;
     color: #fff;
+}
+
+div.embed-widget {
+    padding: 10px;
+}
+
+/* Album Reviews page  */
+
+h2.review-heading {
+    color: #212529;
 }
 
 /* Blog detail page  */
@@ -148,6 +162,10 @@ h2.card-title {
     margin-left: 5%;
 }
 
+p.card-text {
+    text-align: center;
+}
+
 p.post-subtitle {
     margin-bottom: 3px;
 }
@@ -159,6 +177,7 @@ p.post-subtitle {
 
 .login-screen {
     padding-bottom: 50px;
+    text-align: center;
 }
 
 .page-title {
@@ -175,7 +194,7 @@ a.subscribe-button {
 }
 
 #videos {
-    padding: 50px 12px;
+    padding: 50px 12px 0px 12px;
 }
 
 /* Form  */
@@ -205,8 +224,10 @@ p.form-submission-text {
 
 /* Music videos section  */
 
-h3.music-videos {
+.music-albums {
     color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
 
 }
 
@@ -220,6 +241,10 @@ p.subscribe {
     margin-bottom: 30px;
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.sign-out {
+    text-align: center;
 }
 
 /* Media Queries  */

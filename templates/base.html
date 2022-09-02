@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pearl Jam Fan Club Website">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>Pearl Jam Fan Club</title>
@@ -83,7 +83,7 @@
     <main class="flex-shrink-0 main-bg">
 
         {% block content %}
-        <!-- Content Goes here -->
+
         {% endblock content %}
     </main>
 
@@ -93,27 +93,29 @@
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!"
-                    aria-label="Go to band's Facebook page (link opens in new tab)" role="button"><i
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/PearlJam"
+                    target="_blank" aria-label="Go to band's Facebook page (link opens in new tab)" role="button"><i
                         class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!"
+                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/PearlJam" target="_blank"
                     aria-label="Go to band's Twitter page (link opens in new tab)" role="button"><i
                         class="fab fa-twitter"></i></a>
 
                 <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!"
-                    aria-label="Go to band's Instagram page (link opens in new tab)" role="button"><i
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/pearljam/"
+                    target="_blank" aria-label="Go to band's Instagram page (link opens in new tab)" role="button"><i
                         class="fab fa-instagram"></i></a>
 
             </section>
         </div>
 
         <!-- Copyright -->
-        <div class="footer-text text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="footer-text text-center p-3">
             © Created By:
-            <a class=" footer-text text-white" href="https://jonathanburrell.com">Jonathan Burrell</a>
+            <a class=" footer-text text-white" href="https://jonathanburrell.com"
+                aria-label="Link to site creator's personal website (link opens in new tab)" target="_blank">Jonathan
+                Burrell</a>
         </div>
     </footer>
 
