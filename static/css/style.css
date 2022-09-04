@@ -15,7 +15,7 @@ body {
 }
 
 nav .navbar-nav li a {
-    color: #212529 !important;
+    /* color: #212529 !important; */
     font-size: 1.3rem;
 }
 
@@ -23,8 +23,17 @@ div.footer-text {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.dropdown-menu {
+    border: none;
+    background-color: #F8F9F8;
+}
+
 .footer-text {
     font-size: 18px;
+}
+
+.user-icon {
+    padding-right: 5px;
 }
 
 /* General */
