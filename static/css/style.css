@@ -14,9 +14,13 @@ body {
     border: 0px;
 }
 
-nav .navbar-nav li a {
-    /* color: #212529 !important; */
+.navbar ul a {
+    color: #212529 !important;
     font-size: 1.3rem;
+}
+
+.navbar a:hover {
+    color: #6b5b5a !important;
 }
 
 div.footer-text {

@@ -159,10 +159,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email settings 
+# Email settings
 
+DEFAULT_FROM_EMAIL = 'jonathanbtest@gmail.com'
 EMAIL_HOST = 'smtp-mail.outlook.com'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'OUTLOOK_USERNAME'
-EMAIL_HOST_PASSWORD = 'OUTLOOK_PASSWORD'
+EMAIL_HOST_USER = 'EMAIL_USERNAME'
+EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True

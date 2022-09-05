@@ -44,7 +44,9 @@
                 {% else  %}
                 {% for comment in comments %}
                 <hr>
-                <strong>{{ comment.name }} - {{ comment.created_date }}</strong>
+                <strong>Author: {{ comment.name }}</strong>
+                <br>
+                <strong>Last Updated: {{ comment.last_modified }}</strong>
                 {% if user.is_authenticated and user.username == comment.name %}
                 <span class="comment-action-text pl-2">
                     <a href="{% url 'update_comment' comment.id %}" aria-label="edit-comment">Edit</a>

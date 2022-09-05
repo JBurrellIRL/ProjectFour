@@ -34,9 +34,12 @@ class PostDetail(generic.DetailView):
     template_name = 'review_detail.html'
 
     def get(self, request, slug):
+        """
+        To display the album review along with comments added
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.order_by("-created_date")
+        comments = post.comments.order_by("-last_modified")
 
         return render(
             request,
@@ -80,8 +83,6 @@ class PostDetail(generic.DetailView):
             },
         )
 
-# redirect with paramaters - django docs - reverse or reverse lazy ^^
-
 
 class UpdateComment(
         LoginRequiredMixin, UserPassesTestMixin,
@@ -104,7 +105,7 @@ class UpdateComment(
 
     def test_func(self):
         """
-        Prevent another user from editing user's comments
+        This validates that the user is changing the correct comment
         """
         comment = self.get_object()
         return comment.name == self.request.user.username
@@ -131,7 +132,7 @@ class DeleteComment(
 
     def test_func(self):
         """
-        To prevent another user from deleting the comments left by others
+        This validates the comment that the user wishes to delete
         """
         comment = self.get_object()
         return comment.name == self.request.user.username
@@ -155,6 +156,9 @@ class DeleteComment(
 # Contact Form View 
 
 def contact(request):
+    """
+    Function based view for contact form
+    """
 
     if request.method == "POST":
         message_name = request.POST['message-name']
@@ -165,9 +169,7 @@ def contact(request):
             message_email,
             message_contents,
             ['jonathanburrell@outlook.com'],
-
         )
-        messages.success(request, 'Your message has been received. Thanks!')
         return render(request, 'contact.html', {'message_name': message_name})
 
     else:

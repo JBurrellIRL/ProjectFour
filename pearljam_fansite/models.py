@@ -40,6 +40,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=True)
     
     class Meta:
