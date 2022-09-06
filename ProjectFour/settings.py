@@ -22,7 +22,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["pearljam-fansite.herokuapp.com", "localhost"]
 
@@ -51,7 +51,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
 MESSAGE_TAGS = {
@@ -159,11 +159,10 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email settings
+# Email settings 
 
-DEFAULT_FROM_EMAIL = 'jonathanbtest@gmail.com'
-EMAIL_HOST = 'smtp-mail.outlook.com'
-EMAIL_HOST_USER = 'EMAIL_USERNAME'
-EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = 'AWS_USERNAME'
+AWS_SECRET_ACCESS_KEY = 'AWS_PASSWORD'
+AWS_SES_REGION_NAME = 'us-east-1'
+AWS_SES_REGION_ENDPOINT = 'email-smtp.us-east-1.amazonaws.com'
