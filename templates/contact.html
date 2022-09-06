@@ -2,35 +2,34 @@
 
 {% block content %}
 
+{% load crispy_forms_tags %}
+
 <div id="contact-form" class="container-fluid bg-dark">
 
     <div class="container">
 
         <div class="row">
-            {% if message_name %}
-            <h3 class="form-submission-text">Thanks for your submission, {{ message_name }}!</h3>
+            {% if messages %}
+            <h3 class="form-submission-text">Thanks for your submission!</h3>
             <p class="form-submission-text">We read all your messages but are unable to respond personally. Have a great
                 day!</p>
             {% else %}
-            <div class="col-sm-12">
+            <div>
                 <h2>Contact us here!</h2>
                 <div class="container py-4">
                     <form id="contactForm" method="post" action="{% url 'contact' %}">
                         {% csrf_token %}
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="name">Name</label></p>
-                            <input class="form-control" name="message-name" id="name" type="text" required
-                                placeholder="Name" />
+                            {{form.message_name | as_crispy_field}}
                         </div>
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="emailAddress">Email Address</label></p>
-                            <input class="form-control" id="emailAddress" required name="message-email" type="email"
-                                placeholder="Email Address" />
+                            {{form.message_email | as_crispy_field}}
                         </div>
                         <div class="mb-3">
                             <p><label class="form-label text-white" for="message">Message</label></p>
-                            <textarea class="form-control" name="message-contents" id="message-box" type="text"
-                                placeholder="Message" required></textarea>
+                            {{form.message_content | as_crispy_field}}
                         </div>
                         <div class="d-grid">
                             <button class="btn btn-light btn-lg" type="submit">Submit</button>

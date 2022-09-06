@@ -235,6 +235,10 @@ p.form-submission-text {
     height: 12rem;
 }
 
+.form-label {
+    margin: 0px;
+}
+
 /* Music videos section  */
 
 .music-albums {

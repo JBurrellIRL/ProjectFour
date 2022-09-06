@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views import generic
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 
 
 class Home(generic.TemplateView):
@@ -159,18 +159,45 @@ def contact(request):
     """
     Function based view for contact form
     """
+    if request.method == 'POST':
 
-    if request.method == "POST":
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
-        message_contents = request.POST['message-contents']
-        send_mail(
-            message_name,
-            message_email,
-            message_contents,
-            ['jonathanburrell@outlook.com'],
-        )
-        return render(request, 'contact.html', {'message_name': message_name})
+        form = ContactForm(request.POST)
 
-    else:
-        return render(request, 'contact.html', {})
+        if form.is_valid():
+            subject = "PJ Fan Club Enquiry"
+            body = {
+                'name': form.cleaned_data['message_name'], 
+                'email': form.cleaned_data['message_email'],
+                'message': form.cleaned_data['message_content'],
+                }
+            message = "\n".join(body.values())
+            
+            try:
+                send_mail(subject, message, 'jonathanbtest@gmail.com', ['jonathanbtest@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            messages.success(request, 'Contact request submitted successfully.')
+            return redirect("contact")
+    
+    form = ContactForm()
+    return render(request, "contact.html", {'form': form})
+
+# def contact(request):
+#     """
+#     Function based view for contact form
+#     """
+
+#     if request.method == "POST":
+#         message_name = request.POST['message-name']
+#         message_email = request.POST['message-email']
+#         message_content = request.POST['message-content']
+#         send_mail(
+#             message_name,
+#             message_email,
+#             message_content,
+#             ['jonathanburrell@outlook.com'],
+#         )
+#         return render(request, 'contact.html', {'message_name': message_name})
+
+#     else:
+#         return render(request, 'contact.html', {})
