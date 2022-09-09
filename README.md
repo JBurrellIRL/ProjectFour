@@ -72,7 +72,7 @@ The site uses a simple and clean design which sticks to minimalistic colours and
 
 ## Agile Methodology
 
-Github Projects was used to manage the development requirements and process. There's a link to the project board [here](https://github.com/users/JBurrellIRL/projects/2)
+Github Projects was used to manage the development requirements and process. There's a link to the project board [here](https://github.com/users/JBurrellIRL/projects/2) .
 
 A Github Issue was created for each User Story at the start of the project. The User Stories each contain Acceptance Criteria, to make it more clear as to when each User Story has been completed.
 
@@ -89,13 +89,13 @@ For user authentication, I used Django AllAuth.
 
 ## Testing
 
-Testing and results can be found [here](link)
+Testing and results can be found [here](link) .
 
 ### User Authentication
 
 - An important part of this review site is to ensure that only users can only edit and delete their own comments. 
 - I used the Django "LoginRequired" mixin to ensure that anyone trying to access a secure page (such as a direct URL to the page used to edit a comment) are redirected to the login page.  
-- The Django's "UserPassesTest" is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments for which they are the author. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
+- Django's "UserPassesTest" mixin is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments for which they are the author. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
 
 ### Form Validation
 If invalid or empty data is submitted through a form or comment box on the site, the form will not submit and the browser will return an error to inform the user that valid data must be passed for the submission to be successful. This has been tested in multiple browsers.
@@ -171,22 +171,22 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 **Sign Up**
 
-![header](docs/readme_images/features/signup.png)
+![header](docs/readme-images/authentication/register.png)
 
 **Log In**
 
-![header](docs/readme_images/features/login.png)
+![header](docs/readme-images/authentication/login.png)
 
 **Log Out**
 
-![header](docs/readme_images/features/logout.png)
+![header](docs/readme-images/authentication/logout.png)
 
 - I used the django-allauth package to create the Sign up, Log in and Log out functionality.
 - The user receives messages in their browser to confirm whether or not their login attempt has been successful. They also receive notifications if they've made an error in one of the sign-up or login fields.
 
 ### Album Reviews page
 
-![header](Link)
+![header](docs/readme-images/album-reviews.png)
 
 - This page shows a list of posts, one represeting each album released by the group. Each post includes a post thumbnail, the title of the album, the date of release and an excerpt of the main post content
 - The reviews are paginated after 9 posts, and can be navigated througn the "Next" and "Previous" tabs to the bottom of the main grid display. 
@@ -194,16 +194,14 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 ### Review Detail Page
 
-![header](image link)
+![header](docs/readme-images/review-detail.png)
 
 - The main detail page shows the post thumbnail aligned to the left of the container, with the album Title, release date and record producer to the right of the container. 
 - In the main text area, the visitor can read an overview of the album, plus selected professional reviews of the album.
 
 **Comments Section**
 
-![header](docs/readme_images/features/comment.png)
-
-![header](docs/readme_images/features/add_comment.png)
+![header](docs/readme-images/add-comment.png)
 
 - The comments section lists all comments left by users for that particular album review.
 - If nobody has left a comment yet, a message stating "No Comments yet..." is shown.
@@ -211,9 +209,9 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 - Comments can only be left by a user that's created an account and logged in successfully.
 - A logged-in user also has options to Edit or Delete their comments. They can only edit/delete comments left by themselves, not by other users.
     
-![header](docs/readme_images/features/edit_comment.png)
+![header](docs/readme-images/edit-comment.png)
 
-![header](docs/readme_images/features/delete_comment.png)
+![header](docs/readme-images/delete-comment.png)
 
 - The user receives browser messages to confirm that they've posted a comment, edited a comment and/or deleted a comment.
 - If a logged-out user obtains the direct URL to the page to edit a comment, they're redirected to the "Sign In" screen.
@@ -224,7 +222,7 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 Some user stories were scoped out of the project for now, due to time constraints. These are listed under the "Future Features" column in GitHub Projects. It's intended that these will be developed in the future at a later date.
 
 - As a site user I can recover or reset my password so that I can gain access to the logged-in features if I have forgotten my login details.
-- As a site user I can verify my site membership through an email confirmation so that I can provide extra approval for my site membership
+- As a site user I can verify my site membership through an email confirmation so that I can provide extra approval for my site membership.
 - As a site user I can manage my user profile so that I can add information about myself.
 
 ## Deployment - Heroku
@@ -249,12 +247,12 @@ This app was deployed to Heroku using the following steps:
 - Import the env.py file to the settings.py file and add the SECRETKEY and DATABASE_URL file paths.
 - Comment out the default database configuration.
 - Save files and make migrations.
-- Add Cloudinary URL to env.py
+- Add Cloudinary URL to env.py.
 - Add the cloudinary libraries to the list of installed apps in the settings.py file.
 - Add the STATIC files settings to the settings.py file. 
 - Link the file to the templates directory in Heroku.
-- Change the templates directory to TEMPLATES_DIR
-- Add Heroku to the ALLOWED_HOSTS list the format [e.g. for my project 'pearljam-fansite.herokuapp.com', 'localhost']
+- Change the templates directory to TEMPLATES_DIR.
+- Add Heroku to the ALLOWED_HOSTS list the format [e.g. for my project 'pearljam-fansite.herokuapp.com', 'localhost'].
 
 ### Create files / directories
 - Create a requirements.txt file

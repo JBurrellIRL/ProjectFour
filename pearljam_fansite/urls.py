@@ -7,7 +7,7 @@ urlpatterns = [
     path("album-reviews/", views.Reviews.as_view(), name='album_reviews'),
     path("contact.html", views.contact, name='contact'),
     path(
-        'reviews/<slug:slug>/',
+        'album-reviews/<slug:slug>/',
         views.PostDetail.as_view(), name='review_detail'
         ),
     path(
