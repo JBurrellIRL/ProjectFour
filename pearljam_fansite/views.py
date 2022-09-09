@@ -182,22 +182,3 @@ def contact(request):
     form = ContactForm()
     return render(request, "contact.html", {'form': form})
 
-# def contact(request):
-#     """
-#     Function based view for contact form
-#     """
-
-#     if request.method == "POST":
-#         message_name = request.POST['message-name']
-#         message_email = request.POST['message-email']
-#         message_content = request.POST['message-content']
-#         send_mail(
-#             message_name,
-#             message_email,
-#             message_content,
-#             ['jonathanburrell@outlook.com'],
-#         )
-#         return render(request, 'contact.html', {'message_name': message_name})
-
-#     else:
-#         return render(request, 'contact.html', {})
