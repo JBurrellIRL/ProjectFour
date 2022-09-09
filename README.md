@@ -150,19 +150,19 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 **About section**
 
-![header](docs/readme-images/about-home.png)
+![about](docs/readme-images/about-home.png)
 
 - The "About Pearl Jam" section of the homepage has a blurb to give the user a brief history of the band. 
 
 **Upcoming Tour Dates section**
 
-![header](docs/readme-images/tour-dates.png)
+![tour](docs/readme-images/tour-dates.png)
 
 - This section has a list of some upcoming tour dates, that give the date, city and concert venue, which is useful to both new and existing fans of Pearl Jam. 
 
 **Album Streams section**
 
-![header](docs/readme-images/album-streams.png)
+![album-streams](docs/readme-images/album-streams.png)
 
 - This section has some of the group's most popular albums, embedded from Spotify. This is also useful to both new and existing fans of the band.
 
@@ -171,22 +171,22 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 **Sign Up**
 
-![header](docs/readme-images/authentication/register.png)
+![sign-up](docs/readme-images/authentication/register.png)
 
 **Log In**
 
-![header](docs/readme-images/authentication/login.png)
+![log-in](docs/readme-images/authentication/login.png)
 
 **Log Out**
 
-![header](docs/readme-images/authentication/logout.png)
+![log-out](docs/readme-images/authentication/logout.png)
 
 - I used the django-allauth package to create the Sign up, Log in and Log out functionality.
 - The user receives messages in their browser to confirm whether or not their login attempt has been successful. They also receive notifications if they've made an error in one of the sign-up or login fields.
 
 ### Album Reviews page
 
-![header](docs/readme-images/album-reviews.png)
+![reviews](docs/readme-images/album-reviews.png)
 
 - This page shows a list of posts, one represeting each album released by the group. Each post includes a post thumbnail, the title of the album, the date of release and an excerpt of the main post content
 - The reviews are paginated after 9 posts, and can be navigated througn the "Next" and "Previous" tabs to the bottom of the main grid display. 
@@ -194,14 +194,14 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 ### Review Detail Page
 
-![header](docs/readme-images/review-detail.png)
+![review-detail](docs/readme-images/review-detail.png)
 
 - The main detail page shows the post thumbnail aligned to the left of the container, with the album Title, release date and record producer to the right of the container. 
 - In the main text area, the visitor can read an overview of the album, plus selected professional reviews of the album.
 
 **Comments Section**
 
-![header](docs/readme-images/add-comment.png)
+![comments](docs/readme-images/add-comment.png)
 
 - The comments section lists all comments left by users for that particular album review.
 - If nobody has left a comment yet, a message stating "No Comments yet..." is shown.
@@ -209,13 +209,19 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 - Comments can only be left by a user that's created an account and logged in successfully.
 - A logged-in user also has options to Edit or Delete their comments. They can only edit/delete comments left by themselves, not by other users.
     
-![header](docs/readme-images/edit-comment.png)
+![edit-comment](docs/readme-images/edit-comment.png)
 
-![header](docs/readme-images/delete-comment.png)
+![delete-comment](docs/readme-images/delete-comment.png)
 
 - The user receives browser messages to confirm that they've posted a comment, edited a comment and/or deleted a comment.
 - If a logged-out user obtains the direct URL to the page to edit a comment, they're redirected to the "Sign In" screen.
 - If they then log in under a different username, they receive a "401 Forbidden" browser message.
+
+### Contact page
+
+- The user can click on the "Contact Us" option in the navigation bar to be taken to a contact form, which lies on a separate page. The user can fill out the fields - they receive a message to confirm that their message has been sent, and a message is then sent to the site administrator. 
+
+![contact](docs/readme-images/contact-us.png)
 
 ### Future Features
 

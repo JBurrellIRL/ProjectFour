@@ -60,7 +60,6 @@ h3 {
     font-weight: 500;
     color: #212529;
     text-align: center;
-    /* padding-top: 50px; */
     padding: 20px 0px;
     margin: 0px 15px;
 }
@@ -107,10 +106,6 @@ p {
     font-size: 1.3rem;
     padding-bottom: 20px;
     font-weight: 300;
-    /*
-  margin-left: 20px;
-  margin-right: 20px;
-  */
     color: #fff;
     padding-top: 30px;
 }
@@ -123,7 +118,6 @@ p {
 }
 
 .tour-info {
-    /* font-family: "Oswald", sans-serif; */
     font-weight: 300;
     font-size: 1.2rem;
     margin-left: 20px;
@@ -133,7 +127,6 @@ p {
 }
 
 .tour-dates {
-    /* font-family: "Oswald", sans-serif; */
     font-weight: 300;
     text-align: center;
     font-size: 1.2rem;
@@ -239,7 +232,7 @@ p.form-submission-text {
     margin: 0px;
 }
 
-/* Music videos section  */
+/* Album Streams section */
 
 .music-albums {
     color: #fff;
