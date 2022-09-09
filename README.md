@@ -4,6 +4,10 @@ This Pearl Jam Fan Site was designed as a resource to help people to learn about
 
 The live link can be found here - [Pearl Jam Fansite](https://pearljam-fansite.herokuapp.com/)
 
+This screenshot displays the site in browsers of various widths:
+
+![Responsive Design](docs/readme-images/multi-mockup.png)
+
 ## User Experience (UX)
 
 A visitor to this site could be either an existing fan of the band Pearl Jam, or someone that's interested in the group and wants to learn more about the band's history, upcoming concerts and the albums that they've released through their career.
@@ -48,14 +52,14 @@ The site uses a simple and clean design which sticks to minimalistic colours and
 
  <summary>Homepage</summary>
 
-![Landing Page](link)
+![Landing Page](docs/wireframes/landing-page.png)
 </details>
 
 <details>
 
 <summary>Album Reviews Page</summary>
 
-![Browse Albums](link)
+![Browse Albums](docs/wireframes/album-reviews-wf.png)
 </details>
 
 
@@ -63,7 +67,7 @@ The site uses a simple and clean design which sticks to minimalistic colours and
 
 <summary>Contact page</summary>
 
-![Contact Us](link)
+![Contact Us](docs/wireframes/contact-us-wf.png)
 </details>
 
 ## Agile Methodology
@@ -94,9 +98,9 @@ Testing and results can be found [here](link)
 - The Django's "UserPassesTest" is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments for which they are the author. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
 
 ### Form Validation
-If invalid or empty data is submitted through a form or comment box on the site, the form will not submit and the browser will return an error to inform the user that valid data must be passed for the submission to be successful.
+If invalid or empty data is submitted through a form or comment box on the site, the form will not submit and the browser will return an error to inform the user that valid data must be passed for the submission to be successful. This has been tested in multiple browsers.
 
-### Database Security
+### Security
 The database URL and secret key needed to access the database are stored as environment variables in the env.py file. This was set up prior to pushing to GitHub to ensure that this data isn't compromised.
 
 Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site, to ensure the integrity of the forms. 
@@ -105,57 +109,60 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 ### Header
 
-![header](link)
+![header](docs/readme-images/navigation.png)
 
 **Logo**
-- The band logo is positioned in to the left of the website navigation bar, and links back to the homepage for ease of use. The logo image was obtained from [this website](https://stickpng.com/img/icons-logos-emojis/artist-logos/pearl-jam-logo)
+- The band logo is positioned in to the left of the website navigation bar, and links back to the homepage for ease of use. The logo image was obtained from [this website](https://stickpng.com/img/icons-logos-emojis/artist-logos/pearl-jam-logo).
 
 **Navigation Bar**
 
 - The navigation bar is positioned at the top of each page in the site, and includes links to all pages within the site.
-- The navigation bar items are dependent on whether or not the site visitor is logged in. 
+- The navigation bar items display differently depending on whether or not the site visitor is logged in. 
 - If the visitor is logged out, they'll see an option to either register for an account or to log into an existing account:
 
-![header](link)
+![header](docs/readme-images/navigation.png)
 
 - If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username. Clicking on the username opens a dropdown menu, where the user has an option to Logout.
 
-![header](link)
+![header](docs/readme-images/nav-loggedin.png)
 
-- The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. 
+- The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. It switches to a "hamburger" menu at 992px:
+
+![header](docs/readme-images/hamburger.png)
+
 - The navigation items change to a lighter colour on hover.
-
 
 ### Footer
 
-![header](link)
+![footer](docs/readme-images/footer.png)
 
 - The site footer includes links to the band's Twitter, Facebook and Instagram pages.
 - The links are coded to open in a new browser tab, so that the visitor is not taken away from the website.
+- There's also a reference to me as the site designer, along with a link to my personal website.
 
 ### Home Page
 
 **Banner image**
 
-![header](link)
+![header](docs/readme-images/banner.png)
 
 - The homepage includes a banner (hero) image at the top of the page, which is a picture of the group itself. This image is responsive to screens of different sizes.
 
 **About section**
 
-![header](link)
+![header](docs/readme-images/about-home.png)
 
 - The "About Pearl Jam" section of the homepage has a blurb to give the user a brief history of the band. 
 
 **Upcoming Tour Dates section**
 
-![header](link)
+![header](docs/readme-images/tour-dates.png)
 
 - This section has a list of some upcoming tour dates, that give the date, city and concert venue, which is useful to both new and existing fans of Pearl Jam. 
 
 **Album Streams section**
 
-![header](link)
+![header](docs/readme-images/album-streams.png)
 
 - This section has some of the group's most popular albums, embedded from Spotify. This is also useful to both new and existing fans of the band.
 
