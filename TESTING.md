@@ -90,3 +90,127 @@ The site user has the option to post comments on each album review, once they've
 Comments left by users can be seen by the site admin in the admin panel and on the live site, and also by both logged-in and logged-out users on the live site. 
 
 ![comments](docs/readme-images/add-comment.png)
+
+### Lighthouse Test Results
+
+These tests were conducted using the Lighthouse tool in Google Chrome Developer Tools, to check page performance, accessibility, best practices and SEO. I ran separate tests for both mobile and desktop. 
+
+#### Mobile
+
+| Page           | Performance | Accessibility | Best Practices | SEO |
+|----------------|-------------|---------------|----------------|-----|
+| Home           | 94          | 98            | 100            | 100 |
+| Album Reviews  | 94          | 98            | 100            | 100 |
+| Reviews Detail | 94          | 98            | 100            | 92  |
+| Contact        | 95          | 100           | 100            | 100 |
+| Register       | 95          | 100           | 100            | 100 |
+| Sign In        | 94          | 100           | 100            | 98  |
+| Sign Out       | 95          | 100           | 100            | 100 |
+| Update Comment | 95          | 98            | 100            | 100 |
+| Delete Comment | 95          | 98            | 100            | 100 |
+
+#### Desktop
+
+| Page           | Performance | Accessibility | Best Practices | SEO |
+|----------------|-------------|---------------|----------------|-----|
+| Home           | 97          | 98            | 100            | 100 |
+| Album Reviews  | 99          | 98            | 100            | 100 |
+| Reviews Detail | 99          | 98            | 100            | 90  |
+| Contact        | 100         | 100           | 100            | 100 |
+| Register       | 100         | 100           | 100            | 100 |
+| Sign In        | 100         | 100           | 100            | 100 |
+| Sign Out       | 99          | 100           | 100            | 100 |
+| Update Comment | 100         | 99            | 100            | 100 |
+| Delete Comment | 99          | 98            | 100            | 100 |
+
+### Manual Testing
+
+### Site Navigation
+
+**Desktop**
+
+| Element          | Action  | Expected Outcome                 | Pass/Fail |
+|------------------|---------|----------------------------------|-----------|
+| Navigation Bar   |         |                                  |           |
+| Navigation Links | Hover   | Font lightens on hover           | Pass      |
+| Site Logo        | Click   | Returns to homepage              | Pass      |
+| Home             | Click   | Returns to homepage              | Pass      |
+| Album Reviews    | Click   | Opens Album Reviews page         | Pass      |
+| Contact          | Click   | Opens Contact page               | Pass      |
+| Register         | Click   | Opens Registration Page          | Pass      |
+| Login            | Click   | Opens Login Page                 | Pass      |
+| User dropdown    | Click   | Opens dropdown menu              | Pass      |
+| Register         | Display | Doesnt show if user is logged in | Pass      |
+| Login            | Display | Doesnt show if user is logged in | Pass      |
+| User dropdown    | Display | Doesnt show if user is logged in | Pass      |
+
+**Mobile**
+
+| Element        | Action  | Expected Outcome                                 | Pass/Fail |
+|----------------|---------|--------------------------------------------------|-----------|
+| Navigation Bar |         |                                                  |           |
+| Hamburger menu | Display | Appears when screen reduces to medium breakpoint | Pass      |
+| Site Logo      | Tap     | Returns to homepage                              | Pass      |
+| Home           | Tap     | Returns to homepage                              | Pass      |
+| Album Reviews  | Tap     | Opens Album Reviews page                         | Pass      |
+| Contact        | Tap     | Opens Contact page                               | Pass      |
+| Register       | Tap     | Opens Registration Page                          | Pass      |
+| Login          | Tap     | Opens Login Page                                 | Pass      |
+| User dropdown  | Tap     | Opens dropdown menu                              | Pass      |
+| Register       | Display | Doesnt show if user is logged in                 | Pass      |
+| Login          | Display | Doesnt show if user is logged in                 | Pass      |
+| User dropdown  | Display | Doesnt show if user is logged in                 | Pass      |
+
+### Album Reviews Page
+
+| Element           | Action  | Expected Outcome                                                   | Pass/Fail |
+|-------------------|---------|--------------------------------------------------------------------|-----------|
+| Album Review      | Display | Display thumbnail image, title, release date and excerpt of review | Pass      |
+| Thumbnail image   | Click   | Takes user to full album review                                    | Pass      |
+| Review Title      | Click   | Takes user to full album review                                    | Pass      |
+| Page pagination   | Display | Page will show 6 reviews at a time                                 | Pass      |
+| Pagination button | Click   | Takes user backwards and forwards to sub-pages                     | Pass      |
+
+### Album Review Detail Page
+
+| Element                          | Action      | Expected Outcome                                                               | Pass/Fail |
+|----------------------------------|-------------|--------------------------------------------------------------------------------|-----------|
+| Page content                     | Display     | Display album title, release date, producer, album review and comments section | Pass      |
+| Comments section                 | Display     | Display “No Comments Yet” message if no comments have been posted              | Pass      |
+| Comments section                 | Display     | Display comments box under album review, with option to Submit a new comment   | Pass      |
+| Comments section                 | Display     | Comment box only appears to logged-in user and not to logged-out user          | Pass      |
+| Comments section                 | Display     | Options to log in and register appear only to logged-out users                 | Pass      |
+| Comment box                      | Leave empty | Browser returns error message and field won’t submit                           | Pass      |
+| Comment box                      | Input text  | Comment is successfully posted                                                 | Pass      |
+| Comments section                 | Display     | Newly submitted comment is visible to user                                     | Pass      |
+| Comments section                 | Display     | Comments area shows username and date comment was last modified/created        | Pass      |
+| Comments section                 | Display     | Newly submitted comment is visible to other users and logged-out visitors      | Pass      |
+| Comments section                 | Display     | Comment box appears for another comment to be left                             | Pass      |
+| Comments section – edit button   | Click       | Takes user to edit comment page                                                | Pass      |
+| Comments section – delete button | Click       | Takes user to edit comment page                                                | Pass      |
+
+### Edit Comment Page
+
+| Element                   | Action      | Expected Outcome                                                                                                                      | Pass/Fail |
+|---------------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Update comment page       | Access      | If a user tries to access this page (through direct url) without being signed in they are redirected to the Login page                | Pass      |
+| Update comment page       | Access      | If a different logged-in user tries to access this page for a particular comment (through direct URL) they receieve a forbidden error | Pass      |
+| Update comment button     | Click       | Saves comment entered in “Body” box and redirects to review detail page                                                               | Pass      |
+| Update comment text field | Leave empty | Browser returns error message and field won’t submit                                                                                  | Pass      |
+
+### Delete Comment Page
+
+| Element                   | Action      | Expected Outcome                                                                                                                      | Pass/Fail |
+|---------------------------|-------------|---------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Delete comment page       | Access      | If a user tries to access this page (through direct url) without being signed in they are redirected to the Login page                | Pass      |
+| Delete comment page       | Access      | If a different logged-in user tries to access this page for a particular comment (through direct URL) they receieve a forbidden error | Pass      |
+| Delete comment button     | Click       | Deletes comment and returns to Review Detail page                                                                                     | Pass      |
+| Delete comment text field | Leave empty | Browser returns error message and field won't submit                                                                                  | Pass      |
+
+### Contact Page
+
+| Element      | Action | Expected Outcome                                                                         | Pass/Fail |
+|--------------|--------|------------------------------------------------------------------------------------------|-----------|
+| Contact form | Submit | Filling out the fields with valid input for each field sends a message to the site admin | Pass      |
+| Email field  | Submit | Entering a non-email address returns an error                                            | Pass      |
+| Form fields  | Submit | Leaving a form field blank returns an error, and tells the user to fill out the field    | Pass      |

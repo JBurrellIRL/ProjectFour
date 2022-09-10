@@ -8,16 +8,17 @@
             <div class="d-sm-block col-lg-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="placeholder image"
+                    width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" alt="album thumbnail image" width="100%">
                 {% endif %}
             </div>
 
             <div class="col-lg-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                <!-- Review title -->
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
+                <!-- Album release date and producer -->
                 <p class="post-subtitle">Album Released On: {{ post.album_release_date }}</p>
                 <p class="post-subtitle">Produced By: {{ post.album_producer }}</p>
             </div>
