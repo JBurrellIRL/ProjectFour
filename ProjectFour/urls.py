@@ -1,3 +1,7 @@
+"""
+URL configuration
+"""
+
 from django.contrib import admin
 from django.urls import path, include
 from allauth.socialaccount.models import SocialToken, SocialAccount, SocialApp

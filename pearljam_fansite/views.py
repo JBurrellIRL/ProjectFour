@@ -1,5 +1,9 @@
+"""
+Views
+"""
+
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.views import generic
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.messages.views import SuccessMessageMixin
@@ -17,7 +21,8 @@ class Home(generic.TemplateView):
 
 class Reviews(generic.ListView):
     """
-    View to display all album reviews in the Album Reviews page
+    View to display all album reviews in the Album Reviews page, ordered
+    by creation date.
     """
     model = Post
     template_name = "blogpage.html"
@@ -28,7 +33,7 @@ class Reviews(generic.ListView):
 class PostDetail(generic.DetailView):
     """
     Used to display all reviews in the album reviews page, including comments
-    left by logged-in users
+    left by logged-in users, ordered by most recently modified
     """
     model = Post
     template_name = 'review_detail.html'
@@ -128,7 +133,7 @@ class DeleteComment(
     """
     model = Comment
     template_name = 'delete_comment.html'
-    success_message = "Comment deleted."
+    success_message = "Comment deleted!"
 
     def test_func(self):
         """
@@ -153,7 +158,7 @@ class DeleteComment(
         return reverse_lazy('review_detail', kwargs={'slug': review.slug})
 
 
-# Contact Form View 
+# Contact Form View
 
 def contact(request):
     """
@@ -166,19 +171,20 @@ def contact(request):
         if form.is_valid():
             subject = "PJ Fan Club Enquiry"
             body = {
-                'name': form.cleaned_data['message_name'], 
+                'name': form.cleaned_data['message_name'],
                 'email': form.cleaned_data['message_email'],
                 'message': form.cleaned_data['message_content'],
                 }
             message = "\n".join(body.values())
-            
+
             try:
-                send_mail(subject, message, 'jonathanbtest@gmail.com', ['jonathanbtest@gmail.com'])
+                send_mail(subject, message, 'jonathanbtest@gmail.com',
+                                            ['jonathanbtest@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'Contact request submitted successfully.')
+            messages.success(request,
+                             'Contact request submitted successfully.')
             return redirect("contact")
-    
+
     form = ContactForm()
     return render(request, "contact.html", {'form': form})
-

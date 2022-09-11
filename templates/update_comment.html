@@ -7,7 +7,6 @@
     <br>
     <div class="row justify-content-center">
         {% if user.is_authenticated and comment.name == user.username %}
-        <!-- Ensure the user is signed in, and the comment they're trying to access is owned by them -->
         <div class="col-11 col-md-6 col-lg-4 mt-3">
             <form method="post">
                 {{ form | crispy }}
