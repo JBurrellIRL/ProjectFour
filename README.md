@@ -89,7 +89,7 @@ For user authentication, I used Django AllAuth.
 
 ## Testing
 
-Testing and results can be found [here](link) .
+Testing and results can be found [here](https://github.com/JBurrellIRL/ProjectFour/blob/main/TESTING.md) .
 
 ### User Authentication
 
@@ -302,7 +302,7 @@ To clone this repository follow the below steps:
 - CSS
 - Javascript
 
-## Frameworks - Libraries - Programs Used
+## Frameworks, libraries, programs used during development
 - [Django](https://www.djangoproject.com/): Main python framework used in the development of this project.
 - [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): authentication library used to create the user accounts.
 - [Python Decouple](https://pypi.org/project/python-decouple/): used for storage of certain sensitive login details.
@@ -310,6 +310,7 @@ To clone this repository follow the below steps:
 - [PostgreSQL](https://www.postgresql.org/) was used as the database for this project.
 - [Heroku](https://heroku.com) - Cloud-based platform used for deployment of project.
 - [Google's Mobile Responsiveness Test](https://search.google.com/test/mobile-friendly) - Used to verify responsiveness of website on different devices.
+- [Am I Responsive](https://ui.dev/amiresponsive) - Mobile responsive test.
 - [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images at the start of the project.
 - [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
 - [Font Awesome](https://fontawesome.com/) - Used for the logged-in user icon in navigation bar.
@@ -322,6 +323,7 @@ To clone this repository follow the below steps:
 - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/): Used to manage Django forms in the project.
 - [Cloudinary](https://cloudinary.com/): image hosting platform for the project.
 - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): CSS framework for mobile-responsiveness and styling.
+- [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables): used to generate the tables in the TESTING.md file.
 
 ## Credits
 
