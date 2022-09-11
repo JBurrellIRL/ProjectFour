@@ -284,6 +284,10 @@ p.form-submission-text {
     display: inline;
 }
 
+.authentication-username {
+    text-transform: lowercase;
+}
+
 /* Media Queries  */
 
 

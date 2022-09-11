@@ -123,7 +123,7 @@ These tests were conducted using the Lighthouse tool in Google Chrome Developer 
 | Update Comment | 100         | 99            | 100            | 100 |
 | Delete Comment | 99          | 98            | 100            | 100 |
 
-### Manual Testing
+## Manual Testing
 
 ### Site Navigation
 
@@ -214,3 +214,46 @@ These tests were conducted using the Lighthouse tool in Google Chrome Developer 
 | Contact form | Submit | Filling out the fields with valid input for each field sends a message to the site admin | Pass      |
 | Email field  | Submit | Entering a non-email address returns an error                                            | Pass      |
 | Form fields  | Submit | Leaving a form field blank returns an error, and tells the user to fill out the field    | Pass      |
+
+### Authentication pages
+
+#### Registration page
+
+| Element              | Action                         | Expected Outcome                                               | Pass/Fail |
+|----------------------|--------------------------------|----------------------------------------------------------------|-----------|
+| Registration link    | Click                          | Redirect to signup page                                        | Pass      |
+| Username field       | Leave empty                    | Error asking to please fill in this field                      | Pass      |
+| Email address field  | Leave empty                    | Optional field, so can proceed                                 | Pass      |
+| Email address field  | Insert wrong format            | Error to inform that the input must be an email address        | Pass      |
+| Email address field  | Insert duplicate email address | Error to inform that the email address is already registered   | Pass      |
+| Password field       | Leave empty                    | Error asking to please fill in this field                      | Pass      |
+| Password again field | Leave empty                    | Error asking to please fill in this field                      | Pass      |
+| Password again field | Passwords dont match           | Error informing the user that they must use matching passwords | Pass      |
+| Sign Up button       | Click (valid input)            | Account created                                                | Pass      |
+| Sign Up button       | Click (valid input)            | Redirect to homepage                                           | Pass      |
+| Sign Up button       | Click (valid input)            | Success message generated for user                             | Pass      |
+
+#### Login Page
+
+| Element        | Action                   | Expected Outcome                                   | Pass/Fail |
+|----------------|--------------------------|----------------------------------------------------|-----------|
+| Login Link     | Click                    | Redirect to login page                             | Pass      |
+| Username field | Leave empty              | Error asking to please fill in this field          | Pass      |
+| Username field | Enter wrong username     | Error stating that the entered details are invalid | Pass      |
+| Password field | Leave empty              | Error asking to please fill in this field          | Pass      |
+| Password field | Enter incorrect password | Error stating that the entered details are invalid | Pass      |
+| Login button   | Click (valid input)      | Login attempt successful                           | Pass      |
+| Login button   | Click (valid input)      | Redirect to homepage                               | Pass      |
+| Login button   | Click (valid input)      | Success message generated for user                 | Pass      |
+
+#### Logout Page
+
+| Element         | Action | Expected Outcome                   | Pass/Fail |
+|-----------------|--------|------------------------------------|-----------|
+| Logout Link     | Click  | Redirect to logout page            | Pass      |
+| Sign Out button | Click  | Logout successful                  | Pass      |
+| Sign Out button | Click  | Redirect to homepage               | Pass      |
+| Sign Out button | Click  | Success message generated for user | Pass      |
+
+## Bugs
+
