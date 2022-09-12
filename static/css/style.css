@@ -230,8 +230,8 @@ a.subscribe-button {
 /* Form  */
 
 #contact-form {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 5rem;
+    padding-bottom: 20rem;
 }
 
 h3.form-submission-text {

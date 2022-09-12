@@ -248,14 +248,13 @@ These tests were conducted using the Lighthouse tool in Google Chrome Developer 
 
 #### Logout Page
 
-| Element         | Action                | Expected Outcome                   | Pass/Fail |
-|-----------------|-----------------------|---------------------|--------------|-----------|
-| Logout Link     | Click                 | Redirect to logout page            | Pass      |
-| Sign Out button | Click                 | Logout successful                  | Pass      |
-| Sign Out button | Click                 | Redirect to homepage               | Pass      |
-| Sign Out button | Click                 | Success message generated for user | Pass      |
-| Log Out Link    | Open when logged out  | Redirect to homepage               | Pass      |
-
+| Element          | Action               | Expected Outcome                   | Pass/Fail |
+|------------------|----------------------|------------------------------------|-----------|
+| Logout Link      | Click                | Redirect to logout page            | Pass      |
+| Sign Out button  | Click                | Logout successful                  | Pass      |
+| Sign Out button  | Click                | Redirect to homepage               | Pass      |
+| Sign Out button  | Click                | Success message generated for user | Pass      |
+| Logout Page Link | Open When Logged Out | Redirect to homepage               | Pass      |
 
 ## Code Validation
 
@@ -288,3 +287,21 @@ Note 2 - The review content was added using the Summernote editor added to the a
 I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS file. No errors were reported.
 
 ![CSS Validation](https://github.com/JBurrellIRL/ProjectFour/blob/main/docs/testing-images/css-validator.png?raw=true)
+
+### JavaScript
+
+No errors were found when running my JavaScript through the [Jshint](https://jshint.com/) validator.
+
+<details>
+
+<summary>Jshint</summary>
+
+![Jshint](docs/testing-images/jshint.png)
+</details>
+
+### Python
+
+All custom Python files were run through [Pep8](http://pep8online.com/) with no errors found. 
+
+## Bugs
+
