@@ -5,16 +5,16 @@
     <div class="container review-detail">
         <div class="row g-0">
 
-            <div class="d-sm-block col-lg-6 masthead-image">
+            <div class="d-sm-block col-lg-6">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="placeholder image"
-                    width="100%">
+                <img class="masthead-image" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                    alt="placeholder image">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" alt="album thumbnail image" width="100%">
+                <img class="masthead-image" src=" {{ post.featured_image.url }}" alt="album thumbnail image">
                 {% endif %}
             </div>
 
-            <div class="col-lg-6 masthead-text">
+            <div class="col-lg-6">
                 <!-- Review title -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Album release date and producer -->
@@ -29,8 +29,7 @@
 <div class="container">
     <hr>
 
-    <p class="card-text">
-        {{ post.review | safe }}
+    {{ post.review | safe }}
 
 </div>
 <div class="container">

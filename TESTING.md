@@ -257,5 +257,39 @@ These tests were conducted using the Lighthouse tool in Google Chrome Developer 
 | Log Out Link    | Open when logged out  | Redirect to homepage               | Pass      |
 
 
+## Code Validation
+
+### HTML
+
+Pages were run through the [W3C HTML Validator](https://validator.w3.org/). Results below:
+
+| Page           | Logged In | Logged Out |
+|----------------|-----------|------------|
+| base.html      | No errors | No errors  |
+| Home           | Note 1    | Note 1     |
+| Contact        | No errors | No errors  |
+| Register       | No errors | No errors  |
+| Login          | No errors | No errors  |
+| Logout         | No errors | No errors  |
+| Album Reviews  | No errors | No errors  |
+| Review Detail  | Note 2    | Note 2     |
+| Update Comment | No errors | No errors  |
+| Delete Comment | No errors | No errors  |
+
+
+#### Notes
+
+Note 1 - The Spotify iFrames generated errors in the HTML validator as they include inline styling by default. I resolved this by moving the styling settings into the static CSS file.
+
+Note 2 - The review content was added using the Summernote editor added to the admin part of the site, which automatically adds paragraph tags to the form content. I received a validation error about this, so resolved it by removing the paragraph tags in the "Review Detail" template. 
+
+### CSS
+
+I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS file. No errors were reported.
+
+![CSS Validation](docs/readme_images/css_validation.png)
+
+
+
 ## Bugs
 

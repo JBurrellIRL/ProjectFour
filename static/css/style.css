@@ -171,7 +171,11 @@ h2.review-heading {
     color: #212529;
 }
 
-/* Blog detail page  */
+/* Review detail page  */
+
+.masthead-image {
+    width: 100%;
+}
 
 .post-link {
     text-decoration: none;
