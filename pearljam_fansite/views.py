@@ -111,7 +111,7 @@ class UpdateComment(
 
     def test_func(self):
         """
-        This validates that the user is changing the correct comment
+        This validates that the user is changing their own comment
         """
         comment = self.get_object()
         return comment.name == self.request.user.username

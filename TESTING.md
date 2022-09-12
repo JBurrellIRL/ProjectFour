@@ -287,9 +287,4 @@ Note 2 - The review content was added using the Summernote editor added to the a
 
 I used the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate my CSS file. No errors were reported.
 
-![CSS Validation](docs/readme_images/css_validation.png)
-
-
-
-## Bugs
-
+![CSS Validation](https://github.com/JBurrellIRL/ProjectFour/blob/main/docs/testing-images/css-validator.png?raw=true)
