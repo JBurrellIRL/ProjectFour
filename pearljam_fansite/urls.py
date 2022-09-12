@@ -9,7 +9,7 @@ urlpatterns = [
     # path("", views.Reviews.as_view(), name='home'),
     path("", views.Home.as_view(), name='home'),
     path("album-reviews/", views.Reviews.as_view(), name='album_reviews'),
-    path("contact.html", views.contact, name='contact'),
+    path("contact", views.contact, name='contact'),
     path(
         'album-reviews/<slug:slug>/',
         views.PostDetail.as_view(), name='review_detail'

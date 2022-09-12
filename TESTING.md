@@ -248,12 +248,14 @@ These tests were conducted using the Lighthouse tool in Google Chrome Developer 
 
 #### Logout Page
 
-| Element         | Action | Expected Outcome                   | Pass/Fail |
-|-----------------|--------|------------------------------------|-----------|
-| Logout Link     | Click  | Redirect to logout page            | Pass      |
-| Sign Out button | Click  | Logout successful                  | Pass      |
-| Sign Out button | Click  | Redirect to homepage               | Pass      |
-| Sign Out button | Click  | Success message generated for user | Pass      |
+| Element         | Action                | Expected Outcome                   | Pass/Fail |
+|-----------------|-----------------------|---------------------|--------------|-----------|
+| Logout Link     | Click                 | Redirect to logout page            | Pass      |
+| Sign Out button | Click                 | Logout successful                  | Pass      |
+| Sign Out button | Click                 | Redirect to homepage               | Pass      |
+| Sign Out button | Click                 | Success message generated for user | Pass      |
+| Log Out Link    | Open when logged out  | Redirect to homepage               | Pass      |
+
 
 ## Bugs
 

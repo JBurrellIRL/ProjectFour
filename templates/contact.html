@@ -20,15 +20,15 @@
                     <form id="contactForm" method="post" action="{% url 'contact' %}">
                         {% csrf_token %}
                         <div class="mb-3">
-                            <p><label class="form-label text-white" for="name">Name</label></p>
+                            <p><label class="form-label text-white">Name</label></p>
                             {{form.message_name | as_crispy_field}}
                         </div>
                         <div class="mb-3">
-                            <p><label class="form-label text-white" for="emailAddress">Email Address</label></p>
+                            <p><label class="form-label text-white">Email Address</label></p>
                             {{form.message_email | as_crispy_field}}
                         </div>
                         <div class="mb-3">
-                            <p><label class="form-label text-white" for="message">Message</label></p>
+                            <p><label class="form-label text-white">Message</label></p>
                             {{form.message_content | as_crispy_field}}
                         </div>
                         <div class="d-grid">
