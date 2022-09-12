@@ -88,6 +88,7 @@ class PostDetail(generic.DetailView):
             },
         )
 
+# Django documentation: https://docs.djangoproject.com/en/4.1/topics/class-based-views/generic-editing/
 
 class UpdateComment(
         LoginRequiredMixin, UserPassesTestMixin,

@@ -94,8 +94,8 @@ Testing and results can be found [here](https://github.com/JBurrellIRL/ProjectFo
 ### User Authentication
 
 - An important part of this review site is to ensure that only users can only edit and delete their own comments. 
-- I used the Django "LoginRequired" mixin to ensure that anyone trying to access a secure page (such as a direct URL to the page used to edit a comment) are redirected to the login page.  
-- Django's "UserPassesTest" mixin is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments for which they are the author. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
+- I used the Django "LoginRequiredMixin" to ensure that anyone trying to access a secure page (such as a direct URL to the page used to edit a comment) are redirected to the login page.  
+- Django's "UserPassesTestMixin" is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments that they added themselves. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
 
 ### Form Validation
 If invalid or empty data is submitted through a form or comment box on the site, the form will not submit and the browser will return an error to inform the user that valid data must be passed for the submission to be successful. This has been tested in multiple browsers.
@@ -215,7 +215,7 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 - The user receives browser messages to confirm that they've posted a comment, edited a comment and/or deleted a comment.
 - If a logged-out user obtains the direct URL to the page to edit a comment, they're redirected to the "Sign In" screen.
-- If they then log in under a different username, they receive a "401 Forbidden" browser message.
+- If they then log in under a different username, they receive a "403 Forbidden" browser message.
 
 ### Contact page
 
@@ -328,7 +328,8 @@ To clone this repository follow the below steps:
 ## Credits
 
 - [W3Schools](https://www.w3schools.com/)
-- [Django Docs](https://docs.djangoproject.com/en/4.1/releases/3.2/)
+- [Django Docs](https://djangocentral.com/)
+- [Django Central](https://docs.djangoproject.com/en/4.1/releases/3.2/)
 - [Bootstrap 5.0 Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack Overflow](https://stackoverflow.com/)
 - [Wikipedia](https://www.wikipedia.org/): Album review text content was taken from Wikipedia articles and credited in each post. No copyright infringement is intended whatsoever.
@@ -336,6 +337,7 @@ To clone this repository follow the below steps:
 - [Geeks for Geeks](https://www.geeksforgeeks.org/class-based-generic-views-django-create-retrieve-update-delete/) - for help with class-based views.
 - [Code Institute - Blog Walkthrough Project](https://github.com/Code-Institute-Solutions/Django3blog)
 - [Udemy](https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/) - a Udemy course I am taking in parallel to the Code Institute course.
+- [Codemy](https://www.youtube.com/c/Codemycom) - YouTube tutorials.
 - [Ordinary Coders](https://ordinarycoders.com/blog/article/build-a-django-contact-form-with-email-backend) - For help with contact form view and AWS storage option for form.
 
 ## Acknowledgments
