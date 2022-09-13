@@ -5,6 +5,7 @@ Models imports
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from .validators import textfield_not_empty
 
 
 # Tuple for blog post status
@@ -52,7 +53,7 @@ class Comment(models.Model):
                              related_name="comments")
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    body = models.TextField()
+    body = models.TextField(validators=[textfield_not_empty])
     created_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=True)

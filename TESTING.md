@@ -305,3 +305,11 @@ All custom Python files were run through [Pep8](http://pep8online.com/) with no 
 
 ## Bugs
 
+### Footer positioning
+
+- The footer area did not stay at the bottom of the site on pages with content that didn't occupy the full viewport height. I resolved this by adding some Bootstrap 5 classes to the main body and footer sections, to create a "flex column" layout with a minimum viewport height, which keeps the footer in place at the bottom of each page.
+
+### Summernote Code Formatting
+
+- During the code validation phase, I found some errors with extra paragraph elements being added to the Album Review Detail page. I discovered that this was due to Summernote (the WYSIWYG editor package I installed to use in the site back-end) adding its own paragraph tags to the album reviews I'd added. I resolved this by removing the paragraph tags I'd added in my "Review Detail" template.
+

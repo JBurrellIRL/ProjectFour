@@ -22,6 +22,11 @@ class ContactForm(forms.Form):
     """
     Contact form
     """
-    message_name = forms.CharField(max_length=50)
-    message_email = forms.EmailField(max_length=150)
-    message_content = forms.CharField(widget=forms.Textarea, max_length=2000)
+    message_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Name'}))
+    message_email = forms.CharField(
+        max_length=100, widget=forms.EmailInput(
+            attrs={'placeholder': 'Email Address'}))
+    message_content = forms.CharField(
+        widget=forms.Textarea(
+            attrs={'placeholder': 'Message'}), max_length=2000)

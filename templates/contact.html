@@ -16,19 +16,19 @@
             {% else %}
             <div>
                 <h2>Contact us here!</h2>
-                <div class="container py-4">
+                <div class="container">
                     <form id="contactForm" method="post" action="{% url 'contact' %}">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <p><label class="form-label text-white">Name</label></p>
+                        <div class="mb-3 form-label">
+                            <label class="text-white">Name</label>
                             {{form.message_name | as_crispy_field}}
                         </div>
-                        <div class="mb-3">
-                            <p><label class="form-label text-white">Email Address</label></p>
+                        <div class="mb-3 form-label">
+                            <label class="text-white">Email Address</label>
                             {{form.message_email | as_crispy_field}}
                         </div>
-                        <div class="mb-3">
-                            <p><label class="form-label text-white">Message</label></p>
+                        <div class="mb-3 form-label">
+                            <label class="text-white">Message</label>
                             {{form.message_content | as_crispy_field}}
                         </div>
                         <div class="d-grid">

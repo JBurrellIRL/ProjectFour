@@ -69,13 +69,7 @@
     <div class="row">
         <div class="col-md-12 card mb-4  mt-3 ">
             <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -89,7 +83,6 @@
                 <p><a class="link" href="{% url 'account_login' %}?next={{request.path}}"> <strong>Log In</strong></a>
                     or <a class="link" href="{% url 'account_signup' %}?next={{request.path}}">
                         <strong>Register</strong></a> to leave a comment! </p>
-                {% endif %}
                 {% endif %}
             </div>
         </div>
