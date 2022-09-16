@@ -38,7 +38,7 @@ class Post(models.Model):
         """
         Django method to return a string rather than an object
         """
-        return self.title
+        return f"{self.title}"
 
 
 # Commenting model

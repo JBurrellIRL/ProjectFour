@@ -58,7 +58,7 @@ The user can click on the "Contact" navigation item, to be brought to a Contact 
 
 Social media account links have been added to the footer area of the site, that link to the band's official social media channels. The links open in a new tab, so that the user avoids having to navigate entirely away from the site:
 
-![social](docs/testing-images/social-accounts.png)
+![social](docs/readme-images/footer.png)
 
 - *As a new site user I can create an account so that I can be a registered user, and post comments on the site.*
 
@@ -312,4 +312,12 @@ All custom Python files were run through [Pep8](http://pep8online.com/) with no 
 ### Summernote Code Formatting
 
 - During the code validation phase, I found some errors with extra paragraph elements being added to the Album Review Detail page. I discovered that this was due to Summernote (the WYSIWYG editor package I installed to use in the site back-end) adding its own paragraph tags to the album reviews I'd added. I resolved this by removing the paragraph tags I'd added in my "Review Detail" template.
+
+### Contact Form Storage
+
+- During development, I had some issues with getting the contact form to send form submissions to a storage email address satisfactorily. To resolve this so that the contact form works in production, I installed the django-ses package as the email back-end. The form now works as intended. 
+
+## Unfixed bugs
+
+- The only issue that remains unfixed (due to time constraints) is if a registered user submits a comment with only blank space and no text characters. In this situation, the user is directed back to the Album Reviews Detail page without a new comment being created. This is an extremely low-impact issue and will be fixed in future development stages.
 
