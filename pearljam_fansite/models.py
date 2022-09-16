@@ -41,8 +41,6 @@ class Post(models.Model):
         return f"{self.title}"
 
 
-# Commenting model
-
 class Comment(models.Model):
     """
     Comment model

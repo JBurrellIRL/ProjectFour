@@ -7,7 +7,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
-# Album review admin model
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     """

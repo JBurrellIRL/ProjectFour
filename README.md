@@ -1,6 +1,6 @@
 # JB's Pearl Jam Fan Site
 
-This Pearl Jam Fan Site was designed as a resource to help people to learn about the American rock band, Pearl Jam. The site is targeted towards users who want to learn about the band, find out when their upcoming concerts are taking place, as well as read aggregated reviews of the band's albums. Users can create an account on the site, if they want to join the discussion on the band's albums, as well as contact the fan club through the Contact form.
+This Pearl Jam Fan Site was designed as a resource to help people to learn about the American rock band, Pearl Jam. The site is targeted towards users who want to learn about the band, find out when their upcoming concerts are taking place, as well as read aggregated reviews of the band's albums. Users can create an account on the site, if they want to join the discussion on the band's albums, as well as contact the fan club through the Contact form and browse their social media accounts.
 
 The live link can be found here - [Pearl Jam Fansite](https://pearljam-fansite.herokuapp.com/)
 
@@ -36,7 +36,7 @@ A visitor to this site could be either an existing fan of the band Pearl Jam, or
 
 #### User stories not yet implemented
 
-The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have" on the project board on Github. It is intended that these user stories will be implemented at a later date. 
+The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have" on the project board on Github, under the "Future Features" heading. It is intended that these user stories will be implemented at a later date. 
 
 - As a site user I can verify my site membership through an email confirmation so that I can provide extra approval for my site membership.
 - As a site user I can manage my user profile so that I can add information about myself.
@@ -44,7 +44,7 @@ The following user stories were scoped out of the project due to time constraint
 
 ### Site Design
 
-The site uses a simple and clean design which sticks to minimalistic colours and design thinking. There's a single static image on the site homepage (the homepage banner) along with one image to represent each of the group's albums. The site uses alternating white and dark sections in the homepage to make it easier for the user to identify each section individually.
+The site uses a simple and clean design which sticks to minimalistic colours and design thinking. There's a single static image on the site homepage (the homepage banner) along with one image to represent each of the group's albums on the "Album Reviews" page. The site uses white and dark sections in the homepage to make it easier for the user to identify each section individually.
 
 #### Wireframes
 
@@ -85,7 +85,7 @@ Separate views were also created to allow registered users to update their own c
 
 For the site administrator to create album reviews, a custom album review model was required and created. A Comment model was also required to allow users to comment on each album review.
 
-For user authentication, I used Django AllAuth.
+For user authentication, I used the Django AllAuth package.
 
 ## Testing
 
@@ -98,9 +98,11 @@ Testing and results can be found [here](https://github.com/JBurrellIRL/ProjectFo
 - Django's "UserPassesTestMixin" is used to limit access based on permissions i.e. to ensure that users can only edit/delete comments that they added themselves. If the user tries to edit a comment of which they are not the author, they are shown an HTTP 403 Forbidden error.
 
 ### Form Validation
+
 If invalid or empty data is submitted through a form or comment box on the site, the form will not submit and the browser will return an error to inform the user that valid data must be passed for the submission to be successful. This has been tested in multiple browsers.
 
 ### Security
+
 The database URL and secret key needed to access the database are stored as environment variables in the env.py file. This was set up prior to pushing to GitHub to ensure that this data isn't compromised.
 
 Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site, to ensure the integrity of the forms. 
