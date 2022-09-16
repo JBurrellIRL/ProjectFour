@@ -124,7 +124,7 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 ![header](docs/readme-images/navigation.png)
 
-- If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username. Clicking on the username opens a dropdown menu, where the user has an option to Logout.
+- If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username, to show them that they are logged in under that username. Clicking on the username opens a dropdown menu, where the user has an option to Logout. Additional options will be visible in this dropdown once the additional features mentioned in the "Future Features" section are implemented.
 
 ![header](docs/readme-images/nav-loggedin.png)
 
@@ -217,7 +217,7 @@ Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this 
 
 - The user receives browser messages to confirm that they've posted a comment, edited a comment and/or deleted a comment.
 - If a logged-out user obtains the direct URL to the page to edit a comment, they're redirected to the "Sign In" screen.
-- If they then log in under a different username, they receive a "403 Forbidden" browser message.
+- If they then log in under a different username, they receive a "403 Forbidden" browser message as they are not permitted to access that content.
 
 ### Contact page
 

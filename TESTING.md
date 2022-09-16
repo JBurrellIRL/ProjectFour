@@ -280,7 +280,7 @@ Pages were run through the [W3C HTML Validator](https://validator.w3.org/). Resu
 
 Note 1 - The Spotify iFrames generated errors in the HTML validator as they include inline styling by default. I resolved this by moving the styling settings into the static CSS file.
 
-Note 2 - The review content was added using the Summernote editor added to the admin part of the site, which automatically adds paragraph tags to the form content. I received a validation error about this, so resolved it by removing the paragraph tags in the "Review Detail" template. 
+Note 2 - The review content was added using the Summernote editor added to the admin part of the site, which automatically adds paragraph tags to the form content. I received a validation error about this, so resolved it by removing the paragraph tags in the "Review Detail" template. The code now validates without this error.
 
 ### CSS
 
